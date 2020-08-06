@@ -19,14 +19,20 @@ const argv = yargs
   })
   .help().argv;
 
-console.log(argv);
+// console.log(argv);
 
 async function cli() {
   const tmpl8 = await findTmpl8ByFilename(argv.type as string);
   const fm = parseFrontMatter(tmpl8);
-  const output = compileTmpl8(fm.body, fm.attributes, { ...argv });
-  const filename = `${argv.name}.${fm.attributes.extension}`;
+  const options = {
+    ...fm.attributes,
+    ...argv,
+  };
+  const output = compileTmpl8(fm.body, options);
+  const filename = `${argv.name}.${options.extension}`;
+
   await writeOutputToFile(output, filename);
+
   console.log(`Wrote "${filename}" to disk`);
 }
 

@@ -22,13 +22,9 @@ export const parseFrontMatter = (fileContents: string) => {
   return fm;
 };
 
-export const compileTmpl8 = (
-  body: string,
-  options: any,
-  commandLineOpts: any
-) => {
+export const compileTmpl8 = (body: string, options: any) => {
   const tmpl8 = Handlebars.compile(body);
-  const output = tmpl8({ ...options, ...commandLineOpts });
+  const output = tmpl8(options);
   return output;
 };
 
