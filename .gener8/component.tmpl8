@@ -1,5 +1,5 @@
 ---
-ext: tsx
+extension: tsx
 ---
 import * as React from 'react';
 
