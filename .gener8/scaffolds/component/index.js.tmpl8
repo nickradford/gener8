@@ -1,0 +1,5 @@
+---
+extension: js
+defaultExport: false
+---
+import {{name}} from "./{{name}}.{{extension}}";

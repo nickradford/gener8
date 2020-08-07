@@ -1,17 +1,13 @@
-const { readFile, writeFile } = require("fs");
-const { promisify } = require("util");
+const { readFile, writeFile } = require("fs/promises");
 const path = require("path");
 const Handlebars = require("handlebars");
 
 const frontMatter = require("front-matter");
 
-const readFileAsync = promisify(readFile);
-const writeFileAsync = promisify(writeFile);
-
 export const findTmpl8ByFilename = async (name: string) => {
   // console.log(process.cwd());
   const filePath = path.resolve(process.cwd(), ".gener8", `${name}.tmpl8`);
-  const fileContents = await readFileAsync(filePath, "utf8");
+  const fileContents = await readFile(filePath, "utf8");
   // console.log(fileContents);
   return fileContents;
 };
@@ -29,5 +25,5 @@ export const compileTmpl8 = (body: string, options: any) => {
 };
 
 export const writeOutputToFile = async (output: string, filename: string) => {
-  return await writeFileAsync(filename, output, "utf8");
+  return await writeFile(filename, output, "utf8");
 };

@@ -1,0 +1,10 @@
+---
+extension: js
+defaultExport: false
+---
+import React from 'react';
+import "{{name}}.scss";
+
+export{{#if defaultExport}} default{{/if}} function {{ name }}() {
+  return <div>{{name}} works</div>
+}

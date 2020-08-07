@@ -1,0 +1,7 @@
+---
+extension: scss
+background: pink
+---
+.{{name}} {
+  background: {{background}}
+}

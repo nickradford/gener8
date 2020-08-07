@@ -1,8 +1,10 @@
 ---
 extension: tsx
+baseElement: div
+default: true
 ---
 import * as React from 'react';
 
 export const {{ name }} = () => {
-  return <div>{{name}} works</div>
+  return <{{baseElement}}>{{name}} works</{{baseElement}}>
 }
