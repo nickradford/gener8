@@ -19,6 +19,7 @@
   "dependencies": {
     "front-matter": "^4.0.2",
     "handlebars": "^4.7.6",
+    "mkdirp": "^1.0.4",
     "yargs": "^15.4.1"
   }
 }

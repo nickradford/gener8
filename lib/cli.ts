@@ -25,14 +25,14 @@ yargs
     defaultCli
   )
   .command(
-    "scaffold <scaffoldName> <fileName>",
+    "scaffold <scaffold> <name>",
     "scaffold multiple files at the same time",
     (y) => {
-      y.positional("scaffoldName", {
+      y.positional("scaffold", {
         describe: "the name of the scaffold",
         type: "string",
       });
-      y.positional("fileName", {
+      y.positional("name", {
         describe: "name for the output files",
         type: "string",
       });

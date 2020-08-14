@@ -1,0 +1,4 @@
+scaffold:
+  name: test-with-mock
+  description: Generate a test file and a mock file.
+  files: "./*.tmpl8"

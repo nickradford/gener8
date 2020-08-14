@@ -1,5 +1,6 @@
 ---
 extension: js
 defaultExport: false
+isIndex: true
 ---
 import {{name}} from "./{{name}}.{{extension}}";

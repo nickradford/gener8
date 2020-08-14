@@ -4,6 +4,8 @@ const Handlebars = require("handlebars");
 
 const frontMatter = require("front-matter");
 
+const mkdirp = require("mkdirp");
+
 export const findTmpl8ByFilename = async (name: string) => {
   // console.log(process.cwd());
   const filePath = path.resolve(process.cwd(), ".gener8", `${name}.tmpl8`);
@@ -25,5 +27,9 @@ export const compileTmpl8 = (body: string, options: any) => {
 };
 
 export const writeOutputToFile = async (output: string, filename: string) => {
+  const pathParts = filename.split("/");
+  pathParts.pop();
+  const dir = pathParts.join("/");
+  await mkdirp(dir);
   return await writeFile(filename, output, "utf8");
 };
