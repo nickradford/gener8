@@ -1,7 +1,6 @@
 scaffold:
   name: component
-  files:
-    - ./**/*.tmpl8
+  files: ./**/*.tmpl8
 
   outputDirectory: ./src/components/{{name}}
 
@@ -9,6 +8,11 @@ scaffold:
     index.js.tmpl8: index.{{extension}}
 
   options:
-    ts:
-      - extension: ts
-        on: ./**/*.js.tmpl8
+    typescript:
+      shortParam: t
+      extension: ts
+      on: ./**/*.js.tmpl8
+
+    css:
+      extension: css
+      on: ./**/*.scss.tmpl8
